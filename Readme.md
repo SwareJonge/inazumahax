@@ -1,6 +1,6 @@
 # Inazumahax
 Savegame exploit based on savezelda to boot a .ELF File rom the SD Card
-As of now only PAL is not working and tools to inject it into the savefile will be added soon
+Tools to inject it into the savefile will be added soon
 
 ## Credits
 - Copyright 2008-2009  Segher Boessenkool  <segher@kernel.crashing.org>
