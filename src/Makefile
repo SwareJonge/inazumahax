@@ -22,7 +22,7 @@ CFLAGS := -Wall -W -Os -ffreestanding -std=gnu99 -Wstrict-aliasing=2 \
 targets := loaderGO.bin loader2012.bin loaderJP.bin loaderPAL.bin
 
 objs := crt0.o  main.o string.o video.o ios.o sd.o fat.o elf.o sync.o font.o \
-	console.o exception.o exception_2200.o usbgecko.o time.o
+	console.o exception.o exception_2200.o usbgecko.o time.o version.o
 ppms := font.ppm
 
 
@@ -53,6 +53,13 @@ crt0.o exception_2200.o: %.o: %.s
 	@echo "  ASSEMBLE  $@"
 	$(Q)$(CC) $(CFLAGS) -c $< -o $@
 
+version.c: ../.version
+		@echo "  VERSION   $@"
+		$(Q)echo "const char version[] = \"`cat $^` (`whoami`@`hostname -s`)\";" > $@
+
+../.version: FORCE
+		$(Q)$(MAKE) -C .. .version
+
 $(ppms): %.ppm: %.png
 	@echo "  PPM       $@"
 	$(Q)convert $< $@
@@ -64,4 +71,4 @@ font.c: %.c: %.ppm font2c.pl
 FORCE:
 
 clean:
-	rm -rf $(objs) $(targets) $(elfs) font.c
+	rm -rf $(objs) $(targets) $(elfs) font.c version.c

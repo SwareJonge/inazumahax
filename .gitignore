@@ -1,5 +1,7 @@
+.version
 font.c
 version.c
 
-loader.elf
-loader.bin
+*.elf
+*.bin
+*.o

@@ -8,7 +8,7 @@ OUTPUT_ARCH(powerpc:common)
 ENTRY(_start)
 
 SECTIONS {
-	. = 0x80525974;
+	. = 0x80525970;
 
   __OSStopAudioSystem = 0x801cae70;
   GXAbortFrame = 0x801eeb00;

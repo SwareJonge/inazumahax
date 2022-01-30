@@ -7,7 +7,7 @@
 _start:
 	
 	bl __OSStopAudioSystem
-	bl GXAbortFrame;
+	bl GXAbortFrame
 	# Set MEM2 to be able to execute custom code
 	lis     4, 0x1000;	ori     4, 4, 0x0002 
 	lis     3, 0x9000;	ori     3, 3, 0x1FFF
