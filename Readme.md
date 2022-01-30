@@ -1,5 +1,5 @@
 # Inazumahax
-Savegame exploit based on savezelda to boot a .ELF File rom the SD Card
+Savegame exploit based on savezelda to boot a .ELF File from the SD Card
 Tools to inject it into the savefile will be added soon
 
 ## Credits
