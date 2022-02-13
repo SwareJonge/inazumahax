@@ -36,9 +36,9 @@ namespace Inazumahax
              * 2 = PAL ENG, ITA, SPA
              * 2 = PAL ENG, FRA, GER
              * 3 = JP Strikers 2012 Extreme
-             * 4 = JP Go Strikers 2012      
+             * 4 = JP Go Strikers 2012
              */
-            
+
             for (int i = 0; i < titleIDTable.Length; i++)
             {
                 char[] titleID = titleIDTable[i].ToArray(); ;
@@ -61,7 +61,7 @@ namespace Inazumahax
                     int returnaddress = int.Parse(File.ReadAllLines(@"src/" + patchTable[i] + ".lds")[10].Replace("	. = 0x", "").Replace(";", ""), System.Globalization.NumberStyles.HexNumber); // at line 11 the return address is specified
                     Console.WriteLine("Currently Patching {0}", titleIDTable[i]);
                     save = File.ReadAllBytes(path);
-                    save = WriteBytes(save, nameOffset[i], overflow.Take(overflowlength).ToArray()); // Write the Savefilename                    
+                    save = WriteBytes(save, nameOffset[i], overflow.Take(overflowlength).ToArray()); // Write the Savefilename
                     save = WriteBytes(save, nameOffset[i] + overflowlength, BitConverter.GetBytes(returnaddress).Reverse().ToArray());
 
                     int SaveFileOffset = (int)(returnaddress - g_SaveDataAddress[i]);
@@ -70,7 +70,7 @@ namespace Inazumahax
                     File.WriteAllBytes(path, save);
                     Console.WriteLine("Saved {0}", path);
                 }
-                else Console.WriteLine("Din't find {0}", path);
+                else Console.WriteLine("Didn't find {0}", path);
             }
             Console.WriteLine("Done!");
 
