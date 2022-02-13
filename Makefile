@@ -50,6 +50,7 @@ all:
 
 all: FORCE .version
 	$(Q)$(MAKE) -C src
+	./Inazumahax.exe
 
 FORCE:
 

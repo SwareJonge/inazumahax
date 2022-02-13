@@ -3,5 +3,8 @@ font.c
 version.c
 
 *.elf
-*.bin
+loader2012.bin
+loaderGO.bin
+loaderJP.bin
+loaderPAL.bin
 *.o
