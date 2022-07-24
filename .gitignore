@@ -1,6 +1,9 @@
+.vs
 .version
 font.c
 version.c
+Inazumahax/bin
+Inazumahax/obj
 
 *.elf
 loader2012.bin
